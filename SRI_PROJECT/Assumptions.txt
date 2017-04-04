@@ -1,0 +1,49 @@
+README: Phase 3 update:
+
+To Run PROGRAM:
+Make
+Main.exe final_test.sri
+
+Assumed the following syntax for declaring rules throughout the code:
+
+Syntax: Rule_identifier($Parameter1,$Parameter2) :- OR/AND
+
+Rule_Identifier($Parameter1,$Parameter2) Rule_Identifier($Parameter1,$Parameter2)
+
+Spaces should only be put before and after the token, i.e., “:-“. Spaces should also be
+
+put before and after the operator.
+
+No Spaces between parameters declared.
+
+There can be any number of parameters but parameters on the left hand side of the
+
+token should be equal to the parameters on the right hand side of the token
+
+(disregarding the sum. Number of parameters should be equal individually.)
+
+We assumed that there will be only 1 object created for holding the different rules passed onto
+
+the Rule_Based Class and then storing them in the multi map.
+
+Multimap key: Number of Parameters passed
+
+MultiMap Value: A string vector which stores the words of the string individually at sequential
+
+indices.
+
+Error Handling is done but it does not exit out of the program because we assumed that the
+
+user might want to insert the rules which he has declared according to the syntax rather than
+
+typing them all over again.
+
+
+Added:
+ Transaction::DROP for functionality.
+	 Thread class implemented using C++ <thread> library.
+	 Fully implemented the inference AND functionality.
+Assumptions:
+	 We assumed a global variable for the mutex in our thread class due to implementation. We are not instantiating objects in the thread class. That made it very difficult to associate a thread with a particular mutex.
+	Change to RB.cpp - Error only works if it is in the first predicate.
+E.g. Parent($X,$Y) :- OR Father($X,$A) Mother($X, $Y)

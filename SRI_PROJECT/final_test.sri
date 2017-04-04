@@ -1,0 +1,14 @@
+FACT Father(John,Albert)
+FACT Mother(Marry,Paula)
+FACT Child(Bob,Rob,John)
+FACT Child(Tom,Rick,Morty)
+FACT Cousin(Morty,Jerry,Janet)
+RULE Parent($X,$Y) :- OR Father($X,$Y) Mother($X,$Y)
+RULE Uncle($X,$Y,$Z) :- OR Child($X,$Y,$Z) Cousin($X,$Y,$Z)
+INFERENCE Parent($X,$Y)
+INFERENCE Uncle($X,$Y,$Z)
+INFERENCE Parent(John,$Y)
+DROP Child
+DROP Parent
+DROP Uncle
+DUMP final_dump.sri
